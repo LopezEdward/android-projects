@@ -7,4 +7,50 @@
     android:layout_height="match_parent"
     tools:context=".Web">
 
+    <WebView
+        android:id="@+id/seeWeb"
+        android:layout_width="match_parent"
+        android:layout_height="606dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <RadioGroup
+        android:id="@+id/rbGroup"
+        android:layout_width="413dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginBottom="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/seeWeb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rb_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Google" />
+
+        <RadioButton
+            android:id="@+id/rb_brave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brave" />
+
+        <RadioButton
+            android:id="@+id/rb_bing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bing" />
+    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>
