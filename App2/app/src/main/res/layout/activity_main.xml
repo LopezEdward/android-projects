@@ -18,6 +18,7 @@
         android:text="Restaurante\nNueva Esperanza"
         android:textAlignment="center"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,6 +42,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="70dp"
             android:layout_weight="1"
+            android:visibility="visible"
             app:srcCompat="@drawable/restaurante"
             tools:visibility="visible" />
 
@@ -72,27 +74,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/web" />
+            android:visibility="visible"
+            app:srcCompat="@drawable/web"
+            tools:visibility="visible" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/facebook" />
+            android:visibility="visible"
+            app:srcCompat="@drawable/facebook"
+            tools:visibility="visible" />
 
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/instagram" />
+            android:visibility="visible"
+            app:srcCompat="@drawable/instagram"
+            tools:visibility="visible" />
 
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/whatsapp" />
+            android:visibility="visible"
+            app:srcCompat="@drawable/whatsapp"
+            tools:visibility="visible" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
