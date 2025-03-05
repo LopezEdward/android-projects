@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "dev.edwlopez.android.finalproject"
+    namespace = "dev.edwlopez.android.app5"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "dev.edwlopez.android.finalproject"
+        applicationId = "dev.edwlopez.android.app5"
         minSdk = 26
         targetSdk = 35
         versionCode = 1
@@ -40,6 +40,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation(libs.retrofit)
-    implementation (libs.converter.gson)
 }

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_reform_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#5EDCD921"
+    tools:context=".view.tab.TabFormItemFragment">
+
+    <TextView
+        android:id="@+id/fragment_reform_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginBottom="62dp"
+        android:text="@string/fragment_form_title"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_reform_tabcontainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/fragment_reform_tabcontainer"
+        android:layout_width="410dp"
+        android:layout_height="136dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="45dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/submit_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_reform_title">
+
+        <TableLayout
+            android:id="@+id/fragment_reform_tableform"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/fragment_reform_label_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="100dp"
+                    android:text="@string/fragment_form_label_category"
+                    android:textAlignment="textEnd"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/input_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/fragment_reform_label_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="100dp"
+                    android:text="@string/fragment_form_label_quantity"
+                    android:textAlignment="textEnd"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/input_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:ems="10"
+                    android:hint="quantity..."
+                    android:inputType="number" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/fragment_reform_label_defname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="fill"
+                    android:minWidth="100dp"
+                    android:text="@string/fragment_form_label_defname"
+                    android:textAlignment="textEnd"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/input_opt_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:ems="10"
+                    android:gravity="center_vertical"
+                    android:hint="name... (optional)"
+                    android:inputType="text" />
+
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
+        android:text="@string/fragment_form_submit_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/empty_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_reform_tabcontainer" />
+
+    <Button
+        android:id="@+id/empty_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="45dp"
+        android:text="@string/fragment_form_restart_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/submit_button"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_reform_tabcontainer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

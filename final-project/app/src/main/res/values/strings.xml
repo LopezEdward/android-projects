@@ -1,3 +1,38 @@
 <resources>
     <string name="app_name">FinalProject</string>
+    <string name="main_title_txt">Registro de Residuos\nSólidos Recolectados</string>
+    <string name="login_username_hint">put the username</string>
+    <string name="login_password_hint">put the password</string>
+    <string name="loader_title">Recuperando información...</string>
+    <string name="form_title">Acciones del Usuario</string>
+    <string name="form_tab_item_1">Formulario de Residuos</string>
+    <string name="form_tab_item_2">Registros</string>
+
+    <!-- Actions view texts -->
+    <string name="actions_title">Acciones del Usuario</string>
+    <string name="actions_button_register">Registrar residuos</string>
+    <string name="actions_button_query">Obtener registros</string>
+    <string name="actions_button_generate_report">Generar reporte</string>
+    <string name="actions_button_logout">Cerrar Sesión</string>
+
+    <!-- END -->
+
+    <!-- Fragment's texts -->
+    <string name="fragment_form_title">Formulario de Registro\n de Residuos</string>
+    <!-- Fragment residual form labels text -->
+    <string name="fragment_form_label_category">Categoría</string>
+    <string name="fragment_form_label_quantity">Cantidad</string>
+    <string name="fragment_form_label_defname">Nombre del Residuo</string>
+    <!-- Fragment residual buttons text -->
+    <string name="fragment_form_submit_button">Subir</string>
+    <string name="fragment_form_restart_button">Limpiar</string>
+
+    <!-- Fragment register texts -->
+    <string name="fragment_register_title">Registros del Usuario</string>
+    <!-- Fragment register head columns texts -->
+    <string name="fragment_register_table_head_1">id</string>
+    <string name="fragment_register_table_head_2">name</string>
+    <string name="fragment_register_table_head_3">category</string>
+    <string name="fragment_register_table_head_4">quantity</string>
+
 </resources>
