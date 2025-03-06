@@ -4,9 +4,9 @@
     <string name="login_username_hint">put the username</string>
     <string name="login_password_hint">put the password</string>
     <string name="loader_title">Recuperando información...</string>
-    <string name="form_title">Acciones del Usuario</string>
-    <string name="form_tab_item_1">Formulario de Residuos</string>
-    <string name="form_tab_item_2">Registros</string>
+
+    <!--<string name="form_tab_item_1">Formulario de Residuos</string>
+    <string name="form_tab_item_2">Registros</string>-->
 
     <!-- Actions view texts -->
     <string name="actions_title">Acciones del Usuario</string>
@@ -14,7 +14,10 @@
     <string name="actions_button_query">Obtener registros</string>
     <string name="actions_button_generate_report">Generar reporte</string>
     <string name="actions_button_logout">Cerrar Sesión</string>
+    <!-- END -->
 
+    <!-- Form view texts -->
+    <string name="form_title">Formulario de Residuos Sólidos</string>
     <!-- END -->
 
     <!-- Fragment's texts -->

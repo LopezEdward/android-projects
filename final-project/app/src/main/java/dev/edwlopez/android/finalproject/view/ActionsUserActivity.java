@@ -32,8 +32,13 @@ public class ActionsUserActivity extends AppCompatActivity {
 
         // Get bundle
         data = this.getIntent().getBundleExtra("dev.edwlopez.android.finalproject.MainActivity");
-
         credential = (UserCredential) data.getParcelable("user_credential");
+
+        // Get all refs
+        registerResidualButton = findViewById(R.id.actions_register_button);
+        queryRegisterButton = findViewById(R.id.actions_query_buttons);
+        generateReportButton = findViewById(R.id.actions_generator_report);
+        logoutButton = findViewById(R.id.actions_logout);
 
         // Add click listener and actions to all buttons
 
