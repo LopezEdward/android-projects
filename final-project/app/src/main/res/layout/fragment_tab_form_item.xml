@@ -8,7 +8,7 @@
     android:background="#5EDCD921"
     tools:context=".view.tab.TabFormItemFragment">
 
-    <TextView
+    <!--<TextView
         android:id="@+id/fragment_reform_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -144,5 +144,5 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/submit_button"
         app:layout_constraintTop_toBottomOf="@+id/fragment_reform_tabcontainer" />
-
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>

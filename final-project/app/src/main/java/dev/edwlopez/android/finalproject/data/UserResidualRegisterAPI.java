@@ -3,36 +3,38 @@ package dev.edwlopez.android.finalproject.data;
 import com.google.gson.GsonBuilder;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.function.Consumer;
 
+import dev.edwlopez.android.finalproject.data.adapter.AuthFlattenUserResidualRegisterAdapter;
+import dev.edwlopez.android.finalproject.data.adapter.AuthUserAdapter;
+import dev.edwlopez.android.finalproject.data.adapter.FlattenUserResidualRegisterAdapter;
+import dev.edwlopez.android.finalproject.data.adapter.ListFlattenUserResidualRegisterAdapter;
 import dev.edwlopez.android.finalproject.data.adapter.LocalDateTimeAdapter;
-import dev.edwlopez.android.finalproject.data.adapter.UserStatesAdapter;
 import dev.edwlopez.android.finalproject.data.entity.AuthFlattenUserResidualRegister;
-import dev.edwlopez.android.finalproject.data.entity.AuthPageFlattenUserResidualRegister;
+import dev.edwlopez.android.finalproject.data.entity.AuthUser;
 import dev.edwlopez.android.finalproject.data.entity.FlattenUserResidualRegister;
-import dev.edwlopez.android.finalproject.data.entity.User;
-import dev.edwlopez.android.finalproject.data.entity.UserStates;
-import dev.edwlopez.android.finalproject.data.service.UserResidualRegister;
-import dev.edwlopez.android.finalproject.data.service.UserService;
+import dev.edwlopez.android.finalproject.data.entity.collection.ListFlattenUserResidualRegister;
+import dev.edwlopez.android.finalproject.data.service.UserResidualRegisterService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class UserResidualRegisterAPI {
-    private final static String SERVER_URL = "https://api-rest-5mk8.onrender.com";
-    private UserResidualRegister userRegisterService;
-    private Retrofit serviceManager;
+public class UserResidualRegisterAPI extends AbstractRestAPI {
+    private UserResidualRegisterService registerService;
 
     private static final GsonConverterFactory JSON_CONVERTER = GsonConverterFactory.create(new GsonBuilder()
-            .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
+                    //.registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
+                    .registerTypeAdapter(AuthUser.class, new AuthUserAdapter())
+                    .registerTypeAdapter(FlattenUserResidualRegister.class, new FlattenUserResidualRegisterAdapter())
+                    .registerTypeAdapter(AuthFlattenUserResidualRegister.class, new AuthFlattenUserResidualRegisterAdapter())
+                    .registerTypeAdapter(ListFlattenUserResidualRegister.class, new ListFlattenUserResidualRegisterAdapter())
             .create());
 
     private static UserResidualRegisterAPI instance = null;
 
-    private UserResidualRegisterAPI () {};
+    private UserResidualRegisterAPI () {super();};
 
     public static UserResidualRegisterAPI getInstance() {
         if (instance == null) {
@@ -46,24 +48,10 @@ public class UserResidualRegisterAPI {
         return instance;
     }
 
-    public void getPagesOfUserRegister (AuthPageFlattenUserResidualRegister authPages, Consumer<List<FlattenUserResidualRegister>> onSuccess, Consumer<Throwable> onFailure) {
-        userRegisterService.getPageOfRegisters(authPages).enqueue(new Callback<List<FlattenUserResidualRegister>>() {
-            @Override
-            public void onResponse(Call<List<FlattenUserResidualRegister>> call, Response<List<FlattenUserResidualRegister>> response) {
-                onSuccess.accept(response.body());
-            }
+    public void addNewRegister (Consumer<FlattenUserResidualRegister> onSuccess, Consumer<Throwable> onFailure, AuthFlattenUserResidualRegister authR) {
+        initServices();
 
-            @Override
-            public void onFailure(Call<List<FlattenUserResidualRegister>> call, Throwable t) {
-                if (onFailure == null) return;
-
-                onFailure.accept(t);
-            }
-        });
-    }
-
-    public void getUserRegister (long id, Consumer<FlattenUserResidualRegister> onSuccess, Consumer<Throwable> onFailure) {
-        userRegisterService.getRegister(id).enqueue(new Callback<FlattenUserResidualRegister>() {
+        registerService.addNewRegister(authR).enqueue(new Callback<>() {
             @Override
             public void onResponse(Call<FlattenUserResidualRegister> call, Response<FlattenUserResidualRegister> response) {
                 onSuccess.accept(response.body());
@@ -78,22 +66,25 @@ public class UserResidualRegisterAPI {
         });
     }
 
-    public void addNewRegister (AuthFlattenUserResidualRegister authRegister, Consumer<FlattenUserResidualRegister> onSuccess, Consumer<Throwable> onFailure) {
-        userRegisterService.addRegister(authRegister).enqueue(new Callback<FlattenUserResidualRegister>() {
+    public void getAllUserRegisters (Consumer<ListFlattenUserResidualRegister> onSuccess, Consumer<Throwable> onFailure, AuthUser user) {
+        registerService.getAllRegistersByAuthUser(user).enqueue(new Callback<>() {
             @Override
-            public void onResponse(Call<FlattenUserResidualRegister> call, Response<FlattenUserResidualRegister> response) {
+            public void onResponse(Call<ListFlattenUserResidualRegister> call, Response<ListFlattenUserResidualRegister> response) {
                 onSuccess.accept(response.body());
             }
 
             @Override
-            public void onFailure(Call<FlattenUserResidualRegister> call, Throwable t) {
+            public void onFailure(Call<ListFlattenUserResidualRegister> call, Throwable t) {
                 if (onFailure == null) return;
 
                 onFailure.accept(t);
             }
         });
     }
+
     private void initServices () {
-        userRegisterService = serviceManager.create(UserResidualRegister.class);
+        if (registerService != null) return;
+
+        registerService = serviceManager.create(UserResidualRegisterService.class);
     }
 }

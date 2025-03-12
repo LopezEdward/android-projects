@@ -17,18 +17,24 @@
     <!-- END -->
 
     <!-- Form view texts -->
-    <string name="form_title">Formulario de Residuos Sólidos</string>
+    <string name="form_title">Formulario de Registro\n de Residuos Sólidos</string>
+    <string name="form_label_category">Categoría</string>
+    <string name="form_label_quantity">Cantidad</string>
+    <string name="form_label_description">Descripcion</string>
+    <string name="form_label_magnitude">Magnitud</string>
+    <string name="form_submit_button">Subir</string>
+    <string name="form_clean_button">Limpiar</string>
+
+    <string name="form_input_quantity_hint">Put some quantity</string>
+    <string name="form_input_description_hint">Description (max 300)</string>
     <!-- END -->
 
     <!-- Fragment's texts -->
-    <string name="fragment_form_title">Formulario de Registro\n de Residuos</string>
+    <string name="fragment_form_title"></string>
     <!-- Fragment residual form labels text -->
-    <string name="fragment_form_label_category">Categoría</string>
-    <string name="fragment_form_label_quantity">Cantidad</string>
-    <string name="fragment_form_label_defname">Nombre del Residuo</string>
+
     <!-- Fragment residual buttons text -->
-    <string name="fragment_form_submit_button">Subir</string>
-    <string name="fragment_form_restart_button">Limpiar</string>
+
 
     <!-- Fragment register texts -->
     <string name="fragment_register_title">Registros del Usuario</string>

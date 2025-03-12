@@ -1,18 +1,22 @@
 package dev.edwlopez.android.finalproject.data.entity;
 
+import java.time.LocalDateTime;
+
 public class UserResidualRegister {
     private Long id;
-    private String name;
-    private User user;
-    private ResidualCategory category;
+    private String category;
+    private String magnitude;
+    private String description;
+    private LocalDateTime submitDate;
 
     public UserResidualRegister () {};
 
-    public UserResidualRegister (Long id, String name, User user, ResidualCategory category) {
+    public UserResidualRegister(Long id, String category, String magnitude, String description, LocalDateTime submitDate) {
         this.id = id;
-        this.name = name;
-        this.user = user;
         this.category = category;
+        this.magnitude = magnitude;
+        this.description = description;
+        this.submitDate = submitDate;
     }
 
     public Long getId() {
@@ -23,27 +27,35 @@ public class UserResidualRegister {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public ResidualCategory getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(ResidualCategory category) {
+    public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getMagnitude() {
+        return magnitude;
+    }
+
+    public void setMagnitude(String magnitude) {
+        this.magnitude = magnitude;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public LocalDateTime getSubmitDate() {
+        return submitDate;
+    }
+
+    public void setSubmitDate(LocalDateTime submitDate) {
+        this.submitDate = submitDate;
     }
 }

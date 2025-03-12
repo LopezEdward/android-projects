@@ -45,22 +45,22 @@ public class ActionsUserActivity extends AppCompatActivity {
         // Destroy current credentials and return to first view
         logoutButton.setOnClickListener((view) -> {
             credential.destroy();
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         });
 
         // Change to form to register residuals
         registerResidualButton.setOnClickListener((v) -> {
-            Intent intent = new Intent(getApplicationContext(), FormResidualGetter.class);
-            intent.putExtra("dev.edwlopez.android.finalproject.ActionsUserActivity", data);
+            Intent intent = new Intent(this, FormResidualGetter.class);
+            intent.putExtra("credential", credential);
 
             startActivity(intent);
         });
 
         // Change to form to view lasted user register
         queryRegisterButton.setOnClickListener((v) -> {
-            Intent intent = new Intent(getApplicationContext(), ViewResidualRegisterUserActivity.class);
-            intent.putExtra("dev.edwlopez.android.finalproject.ActionsUserActivity", data);
+            Intent intent = new Intent(this, ViewResidualRegisterUserActivity.class);
+            intent.putExtra("credential", credential);
 
             startActivity(intent);
         });

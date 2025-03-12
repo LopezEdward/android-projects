@@ -1,29 +1,29 @@
 package dev.edwlopez.android.finalproject.data.entity;
 
 public class AuthFlattenUserResidualRegister {
-    private AuthUser user;
-    private FlattenUserResidualRegister register;
+    private AuthUser authUserDTO;
+    private FlattenUserResidualRegister registerDTO;
 
     public AuthFlattenUserResidualRegister () {};
 
     public AuthFlattenUserResidualRegister(AuthUser user, FlattenUserResidualRegister register) {
-        this.user = user;
-        this.register = register;
+        this.authUserDTO = user;
+        this.registerDTO = register;
     }
 
-    public AuthUser getUser() {
-        return user;
+    public AuthUser getAuthUserDTO() {
+        return authUserDTO;
     }
 
-    public void setUser(AuthUser user) {
-        this.user = user;
+    public void setAuthUserDTO(AuthUser authUserDTO) {
+        this.authUserDTO = authUserDTO;
     }
 
-    public FlattenUserResidualRegister getRegister() {
-        return register;
+    public FlattenUserResidualRegister getRegisterDTO() {
+        return registerDTO;
     }
 
-    public void setRegister(FlattenUserResidualRegister register) {
-        this.register = register;
+    public void setRegisterDTO(FlattenUserResidualRegister registerDTO) {
+        this.registerDTO = registerDTO;
     }
 }

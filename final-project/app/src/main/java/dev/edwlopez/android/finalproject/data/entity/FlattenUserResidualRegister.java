@@ -1,19 +1,25 @@
 package dev.edwlopez.android.finalproject.data.entity;
 
+import java.time.LocalDateTime;
+
 public class FlattenUserResidualRegister {
     private Long id;
-    private String name;
+    private String description;
     private String category;
-    private Long quantity;
+    private String magnitude;
+    private Double quantity;
+    private LocalDateTime submitDate;
 
     public FlattenUserResidualRegister() {
     }
 
-    public FlattenUserResidualRegister(Long id, String name, String category, Long quantity) {
+    public FlattenUserResidualRegister(Long id, String description, String category, String magnitude, Double quantity, LocalDateTime submitDate) {
         this.id = id;
-        this.name = name;
+        this.description = description;
         this.category = category;
         this.quantity = quantity;
+        this.submitDate = submitDate;
+        this.magnitude = magnitude;
     }
 
     public Long getId() {
@@ -24,12 +30,12 @@ public class FlattenUserResidualRegister {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getDescription() {
+        return description;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getCategory() {
@@ -40,11 +46,27 @@ public class FlattenUserResidualRegister {
         this.category = category;
     }
 
-    public Long getQuantity() {
+    public Double getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Long quantity) {
+    public void setQuantity(Double quantity) {
         this.quantity = quantity;
+    }
+
+    public LocalDateTime getSubmitDate() {
+        return submitDate;
+    }
+
+    public void setSubmitDate(LocalDateTime submitDate) {
+        this.submitDate = submitDate;
+    }
+
+    public String getMagnitude() {
+        return magnitude;
+    }
+
+    public void setMagnitude(String magnitude) {
+        this.magnitude = magnitude;
     }
 }

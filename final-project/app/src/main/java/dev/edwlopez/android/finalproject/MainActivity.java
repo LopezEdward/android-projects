@@ -22,6 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import dev.edwlopez.android.finalproject.credential.UserCredential;
+import dev.edwlopez.android.finalproject.data.AbstractRestAPI;
 import dev.edwlopez.android.finalproject.data.UserRestAPI;
 import dev.edwlopez.android.finalproject.data.entity.User;
 import dev.edwlopez.android.finalproject.view.ActionsUserActivity;
@@ -30,7 +31,7 @@ import dev.edwlopez.android.finalproject.view.RegisterUserActivity;
 import dev.edwlopez.android.finalproject.util.EditTextTools;
 
 public class MainActivity extends AppCompatActivity {
-    private final UserRestAPI client1 = UserRestAPI.getInstance();
+    private UserRestAPI client1;
     private UserCredential credential, tmp;
     private EditText inputUsername, inputPassword;
     private Button buttonLogin, buttonRegister;
@@ -49,6 +50,12 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Get the API URL to resources and put in the abstract class
+        AbstractRestAPI.setAPIUrl(getResources().getText(R.string.api_route).toString());
+
+        // Now, init the service
+        client1 = UserRestAPI.getInstance();
 
         // Get all elements
         inputUsername = this.findViewById(R.id.inputUsername);

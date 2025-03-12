@@ -28,18 +28,17 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class UserRestAPI {
-    private final static String SERVER_URL = "https://api-rest-5mk8.onrender.com";
+public class UserRestAPI extends AbstractRestAPI {
     private UserService userService;
-    private Retrofit serviceManager;
     private static final GsonConverterFactory JSON_CONVERTER = GsonConverterFactory.create(new GsonBuilder()
             .registerTypeAdapter(UserStates.class, new UserStatesAdapter())
             .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
             .create());
     private static UserRestAPI instance = null;
 
-    private UserRestAPI (){};
+    private UserRestAPI (){super();};
     public static UserRestAPI getInstance() {
+
         if (instance == null) {
             instance = new UserRestAPI();
             instance.serviceManager = new Retrofit.Builder()
